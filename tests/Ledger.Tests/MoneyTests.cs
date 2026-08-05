@@ -8,4 +8,7 @@ public class MoneyTests
 
     [Fact]
     public void ClampsToTheCeiling() => Assert.Equal(5m, Money.Clamp(9m, 5m));
+
+    [Fact]
+    public void AppliesTheTransactionFee() => Assert.Equal(1.5m, Money.ApplyFee(100m));
 }
