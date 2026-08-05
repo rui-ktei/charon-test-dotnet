@@ -8,4 +8,7 @@ public class MoneyTests
 
     [Fact]
     public void ClampsToTheCeiling() => Assert.Equal(5m, Money.Clamp(9m, 5m));
+
+    [Fact]
+    public void SharesAnAmountEvenly() => Assert.Equal(3.33m, Money.Share(10m, 3));
 }
