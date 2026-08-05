@@ -12,5 +12,5 @@ public static class Money
 
     public static decimal Fee(decimal amount) => Round(amount * FeeRate);
 
-    public static decimal Percent(decimal amount, decimal rate) => Round(amount * rate);
+    public static decimal Percent(decimal amount, decimal fraction) => Round(amount * fraction);
 }
