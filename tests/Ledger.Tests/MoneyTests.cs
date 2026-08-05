@@ -11,4 +11,7 @@ public class MoneyTests
 
     [Fact]
     public void SharesAnAmountEvenly() => Assert.Equal(3.33m, Money.Share(10m, 3));
+
+    [Fact]
+    public void ChargesATransactionFee() => Assert.Equal(0.15m, Money.Fee(10m));
 }
