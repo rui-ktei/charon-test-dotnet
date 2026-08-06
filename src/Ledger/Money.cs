@@ -22,5 +22,13 @@ public static class Money
         return Round(amount - amount * percent / 100m);
     }
 
-    public static decimal Tip(decimal amount, int percent) => Round(amount * percent / 100);
+    public static decimal Tip(decimal amount, decimal percent)
+    {
+        if (percent < 0m || percent > 100m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(percent), percent, "Percent must be between 0 and 100.");
+        }
+
+        return Round(amount * percent / 100m);
+    }
 }
