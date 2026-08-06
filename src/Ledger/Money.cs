@@ -39,4 +39,6 @@ public static class Money
         var total = Round(amount / ways) * ways;
         return (total, amount - total);
     }
+
+    public static decimal Refund(decimal amount, decimal fee) => Round(amount - fee);
 }
