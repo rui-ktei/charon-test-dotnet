@@ -73,4 +73,10 @@ public class MoneyTests
     {
         Assert.Equal(25.00m, Money.Prorate(100m, 1, 4));
     }
+
+    [Fact]
+    public void WithholdsAtTheGivenRate()
+    {
+        Assert.Equal(12.50m, Money.Withhold(100m, 12.5m));
+    }
 }
