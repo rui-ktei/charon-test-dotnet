@@ -24,4 +24,7 @@ public class MoneyTests
 
     [Fact]
     public void RejectsAPercentAboveOneHundred() => Assert.Throws<ArgumentOutOfRangeException>(() => Money.Discount(10m, 200m));
+
+    [Fact]
+    public void CalculatesATip() => Assert.Equal(1.50m, Money.Tip(10m, 15));
 }

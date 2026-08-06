@@ -21,4 +21,6 @@ public static class Money
 
         return Round(amount - amount * percent / 100m);
     }
+
+    public static decimal Tip(decimal amount, int percent) => Round(amount * percent / 100);
 }
