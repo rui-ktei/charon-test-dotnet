@@ -54,5 +54,5 @@ public static class Money
 
     public static decimal Prorate(decimal amount, int elapsedDays, int periodDays) => Round(amount * elapsedDays / periodDays);
 
-    public static decimal Levy(decimal amount, decimal rate) => Round(amount * rate);
+    public static decimal Levy(decimal amount, decimal fraction) => Round(amount * fraction);
 }
