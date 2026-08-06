@@ -66,5 +66,5 @@ public class MoneyTests
     public void ClampsTheRefundToZeroWhenTheFeeExceedsTheAmount() => Assert.Equal(0m, Money.Refund(10m, 12m));
 
     [Fact]
-    public void SharesNothingBetweenNoWays() => Assert.Equal(0m, Money.Share(10m, 0));
+    public void RejectsNonPositiveWays() => Assert.Throws<ArgumentOutOfRangeException>(() => Money.Share(10m, 0));
 }

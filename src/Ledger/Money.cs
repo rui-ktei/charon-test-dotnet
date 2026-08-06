@@ -8,7 +8,15 @@ public static class Money
 
     public static decimal Clamp(decimal amount, decimal ceiling) => Math.Min(amount, ceiling);
 
-    public static decimal Share(decimal amount, int ways) => ways <= 0 ? 0m : Round(amount / ways);
+    public static decimal Share(decimal amount, int ways)
+    {
+        if (ways <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(ways), ways, "Ways must be greater than 0.");
+        }
+
+        return Round(amount / ways);
+    }
 
     public static decimal Fee(decimal amount) => Round(amount * FeeRate);
 
