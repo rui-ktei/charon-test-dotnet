@@ -44,11 +44,11 @@ public class MoneyTests
     public void ChargesTheFeeWhenItBeatsTheMinimum() => Assert.Equal(1.50m, Money.Surcharge(100m, 0.50m));
 
     [Fact]
-    public void RaisesAnAmountToTheFloor() => Assert.Equal(5m, Money.Floor(2m, 5m));
+    public void RaisesAnAmountToTheFloor() => Assert.Equal(5m, Money.AtLeast(2m, 5m));
 
     [Fact]
-    public void LeavesAnAmountAboveTheFloorAlone() => Assert.Equal(9m, Money.Floor(9m, 5m));
+    public void LeavesAnAmountAboveTheFloorAlone() => Assert.Equal(9m, Money.AtLeast(9m, 5m));
 
     [Fact]
-    public void LeavesAnAmountEqualToTheFloorAlone() => Assert.Equal(5m, Money.Floor(5m, 5m));
+    public void LeavesAnAmountEqualToTheFloorAlone() => Assert.Equal(5m, Money.AtLeast(5m, 5m));
 }

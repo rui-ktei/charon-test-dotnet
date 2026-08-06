@@ -34,5 +34,5 @@ public static class Money
 
     public static decimal Surcharge(decimal amount, decimal minimum) => Math.Max(Fee(amount), minimum);
 
-    public static decimal Floor(decimal amount, decimal floor) => Math.Max(amount, floor);
+    public static decimal AtLeast(decimal amount, decimal floor) => Math.Max(amount, floor);
 }
