@@ -12,5 +12,13 @@ public static class Money
 
     public static decimal Fee(decimal amount) => Round(amount * FeeRate);
 
-    public static decimal Discount(decimal amount, decimal percent) => Round(amount - amount * percent / 100m);
+    public static decimal Discount(decimal amount, decimal percent)
+    {
+        if (percent < 0m || percent > 100m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(percent), percent, "Percent must be between 0 and 100.");
+        }
+
+        return Round(amount - amount * percent / 100m);
+    }
 }
