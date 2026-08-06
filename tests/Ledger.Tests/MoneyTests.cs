@@ -61,4 +61,7 @@ public class MoneyTests
 
     [Fact]
     public void RefundsWhatIsLeftAfterTheFee() => Assert.Equal(9.85m, Money.Refund(10m, 0.15m));
+
+    [Fact]
+    public void ClampsTheRefundToZeroWhenTheFeeExceedsTheAmount() => Assert.Equal(0m, Money.Refund(10m, 12m));
 }
