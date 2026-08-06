@@ -8,7 +8,7 @@ public static class Money
 
     public static decimal Clamp(decimal amount, decimal ceiling) => Math.Min(amount, ceiling);
 
-    public static decimal Share(decimal amount, int ways) => Round(amount / ways);
+    public static decimal Share(decimal amount, int ways) => Round(amount / Math.Max(ways, 1));
 
     public static decimal Fee(decimal amount) => Round(amount * FeeRate);
 
