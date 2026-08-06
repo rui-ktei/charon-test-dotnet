@@ -49,4 +49,6 @@ public static class Money
     }
 
     public static decimal Refund(decimal amount, decimal fee) => Math.Max(Round(amount - fee), 0m);
+
+    public static decimal Instalment(decimal amount, int count) => Round(amount / count);
 }
