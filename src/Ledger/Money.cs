@@ -11,4 +11,6 @@ public static class Money
     public static decimal Share(decimal amount, int ways) => Round(amount / ways);
 
     public static decimal Fee(decimal amount) => Round(amount * FeeRate);
+
+    public static decimal Discount(decimal amount, decimal percent) => Round(amount - amount * percent / 100m);
 }
