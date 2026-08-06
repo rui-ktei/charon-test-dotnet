@@ -57,4 +57,6 @@ public static class Money
     public static decimal Duty(decimal amount, decimal band) => Round(amount * band / 100m);
 
     public static decimal Surtax(decimal amount, decimal rate) => Round(amount * rate / 100m);
+
+    public static decimal Rebate(decimal amt, decimal percent) => Round(amt * percent / 100m);
 }
