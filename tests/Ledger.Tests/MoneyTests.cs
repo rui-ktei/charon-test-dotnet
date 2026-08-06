@@ -48,4 +48,7 @@ public class MoneyTests
 
     [Fact]
     public void LeavesAnAmountAboveTheFloorAlone() => Assert.Equal(9m, Money.Floor(9m, 5m));
+
+    [Fact]
+    public void LeavesAnAmountEqualToTheFloorAlone() => Assert.Equal(5m, Money.Floor(5m, 5m));
 }
