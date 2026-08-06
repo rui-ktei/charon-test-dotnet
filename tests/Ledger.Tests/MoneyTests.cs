@@ -42,4 +42,7 @@ public class MoneyTests
 
     [Fact]
     public void ChargesTheFeeWhenItBeatsTheMinimum() => Assert.Equal(1.50m, Money.Surcharge(100m, 0.50m));
+
+    [Fact]
+    public void NegatesAnAmount() => Assert.Equal(-5m, Money.Negate(5m));
 }
