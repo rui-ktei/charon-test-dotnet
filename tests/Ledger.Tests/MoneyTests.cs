@@ -44,8 +44,18 @@ public class MoneyTests
     public void ChargesTheFeeWhenItBeatsTheMinimum() => Assert.Equal(1.50m, Money.Surcharge(100m, 0.50m));
 
     [Fact]
-    public void AllocatesTheWholeAmountWhenItDividesEvenly() => Assert.Equal(10m, Money.Allocate(10m, 2));
+    public void AllocatesTheWholeAmountWhenItDividesEvenly()
+    {
+        var (total, remainder) = Money.Allocate(10m, 2);
+        Assert.Equal(10m, total);
+        Assert.Equal(0m, remainder);
+    }
 
     [Fact]
-    public void AllocatesWhatTheSharesAddUpTo() => Assert.Equal(9.99m, Money.Allocate(10m, 3));
+    public void AllocatesWhatTheSharesAddUpTo()
+    {
+        var (total, remainder) = Money.Allocate(10m, 3);
+        Assert.Equal(9.99m, total);
+        Assert.Equal(0.01m, remainder);
+    }
 }
