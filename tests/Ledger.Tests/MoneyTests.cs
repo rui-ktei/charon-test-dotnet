@@ -67,4 +67,10 @@ public class MoneyTests
 
     [Fact]
     public void RejectsNonPositiveWays() => Assert.Throws<ArgumentOutOfRangeException>(() => Money.Share(10m, 0));
+
+    [Fact]
+    public void ProratesAcrossThePeriod()
+    {
+        Assert.Equal(25.00m, Money.Prorate(100m, 1, 4));
+    }
 }
