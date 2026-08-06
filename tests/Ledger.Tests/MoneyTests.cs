@@ -79,4 +79,10 @@ public class MoneyTests
     {
         Assert.Equal(2.50m, Money.Surtax(100m, 2.5m));
     }
+
+    [Fact]
+    public void PaysABonusAtTheGivenRate()
+    {
+        Assert.Equal(5.00m, Money.Bonus(100m, 5m));
+    }
 }
