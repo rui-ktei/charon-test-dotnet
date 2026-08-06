@@ -24,4 +24,16 @@ public class MoneyTests
 
     [Fact]
     public void RejectsAPercentAboveOneHundred() => Assert.Throws<ArgumentOutOfRangeException>(() => Money.Discount(10m, 200m));
+
+    [Fact]
+    public void CalculatesATip() => Assert.Equal(1.50m, Money.Tip(10m, 15m));
+
+    [Fact]
+    public void CalculatesATipWithAFractionalPercent() => Assert.Equal(1.25m, Money.Tip(10m, 12.5m));
+
+    [Fact]
+    public void RejectsANegativeTipPercent() => Assert.Throws<ArgumentOutOfRangeException>(() => Money.Tip(10m, -50m));
+
+    [Fact]
+    public void RejectsATipPercentAboveOneHundred() => Assert.Throws<ArgumentOutOfRangeException>(() => Money.Tip(10m, 200m));
 }
