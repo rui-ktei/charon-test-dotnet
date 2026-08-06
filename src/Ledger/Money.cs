@@ -56,5 +56,5 @@ public static class Money
 
     public static decimal Duty(decimal amount, decimal band) => Round(amount * band / 100m);
 
-    public static decimal Withhold(decimal amount, decimal pct) => Round(amount * pct / 100m);
+    public static decimal Withhold(decimal amount, decimal percent) => Round(amount * percent / 100m);
 }
