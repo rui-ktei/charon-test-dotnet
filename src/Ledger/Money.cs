@@ -31,4 +31,6 @@ public static class Money
 
         return Round(amount * percent / 100m);
     }
+
+    public static decimal Surcharge(decimal amount, decimal minimum) => Math.Max(Fee(amount), minimum);
 }

@@ -36,4 +36,10 @@ public class MoneyTests
 
     [Fact]
     public void RejectsATipPercentAboveOneHundred() => Assert.Throws<ArgumentOutOfRangeException>(() => Money.Tip(10m, 200m));
+
+    [Fact]
+    public void ChargesTheMinimumSurchargeOnASmallAmount() => Assert.Equal(0.50m, Money.Surcharge(10m, 0.50m));
+
+    [Fact]
+    public void ChargesTheFeeWhenItBeatsTheMinimum() => Assert.Equal(1.50m, Money.Surcharge(100m, 0.50m));
 }
