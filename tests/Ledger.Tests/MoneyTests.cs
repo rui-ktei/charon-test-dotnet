@@ -75,7 +75,7 @@ public class MoneyTests
     }
 
     [Fact]
-    public void LeviesAtTheGivenRate()
+    public void LeviesAtTheGivenFraction()
     {
         Assert.Equal(2.50m, Money.Levy(100m, 0.025m));
     }
