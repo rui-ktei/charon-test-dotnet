@@ -33,4 +33,10 @@ public static class Money
     }
 
     public static decimal Surcharge(decimal amount, decimal minimum) => Math.Max(Fee(amount), minimum);
+
+    public static (decimal Total, decimal Remainder) Allocate(decimal amount, int ways)
+    {
+        var total = Round(amount / ways) * ways;
+        return (total, amount - total);
+    }
 }
