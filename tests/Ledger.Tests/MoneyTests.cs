@@ -73,4 +73,10 @@ public class MoneyTests
     {
         Assert.Equal(25.00m, Money.Prorate(100m, 1, 4));
     }
+
+    [Fact]
+    public void LeviesAtTheGivenRate()
+    {
+        Assert.Equal(2.50m, Money.Levy(100m, 0.025m));
+    }
 }
