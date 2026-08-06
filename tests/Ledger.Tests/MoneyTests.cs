@@ -1,3 +1,4 @@
+using System;
 using Ledger;
 using Xunit;
 
@@ -14,4 +15,13 @@ public class MoneyTests
 
     [Fact]
     public void ChargesATransactionFee() => Assert.Equal(0.15m, Money.Fee(10m));
+
+    [Fact]
+    public void AppliesADiscount() => Assert.Equal(9m, Money.Discount(10m, 10m));
+
+    [Fact]
+    public void RejectsANegativePercent() => Assert.Throws<ArgumentOutOfRangeException>(() => Money.Discount(10m, -50m));
+
+    [Fact]
+    public void RejectsAPercentAboveOneHundred() => Assert.Throws<ArgumentOutOfRangeException>(() => Money.Discount(10m, 200m));
 }
