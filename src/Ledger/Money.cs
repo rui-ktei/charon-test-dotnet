@@ -53,4 +53,6 @@ public static class Money
     public static decimal Instalment(decimal amount, int count) => Round(amount / count);
 
     public static decimal Prorate(decimal amount, int elapsedDays, int periodDays) => Round(amount * elapsedDays / periodDays);
+
+    public static decimal Duty(decimal amount, decimal band) => Round(amount * band / 100m);
 }
