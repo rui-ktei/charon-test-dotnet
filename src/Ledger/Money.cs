@@ -3,6 +3,7 @@ namespace Ledger;
 public static class Money
 {
     private const decimal FeeRate = 0.015m;
+    private const decimal MaximumFee = 20.00m;
 
     public static decimal Round(decimal amount) => Math.Round(amount, 2, MidpointRounding.ToEven);
 
@@ -18,7 +19,7 @@ public static class Money
         return Round(amount / ways);
     }
 
-    public static decimal Fee(decimal amount) => Round(amount * FeeRate);
+    public static decimal Fee(decimal amount) => Math.Min(Round(amount * FeeRate), MaximumFee);
 
     public static decimal Discount(decimal amount, decimal percent)
     {
