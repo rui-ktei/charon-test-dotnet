@@ -65,4 +65,6 @@ public static class Money
     public static decimal Bonus(decimal amount, decimal rate) => Round(amount * rate / 100m);
 
     public static decimal Rebate(decimal amount, decimal rate) => Round(amount * rate / 100m);
+
+    public static decimal Withholding(decimal amount, decimal rate) => Round(amount * rate / 100m);
 }
