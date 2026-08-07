@@ -17,6 +17,9 @@ public class MoneyTests
     public void ChargesATransactionFee() => Assert.Equal(0.15m, Money.Fee(10m));
 
     [Fact]
+    public void ChargesTheMinimumFeeOnATinyAmount() => Assert.Equal(0.10m, Money.Fee(1m));
+
+    [Fact]
     public void AppliesADiscount() => Assert.Equal(9m, Money.Discount(10m, 10m));
 
     [Fact]
