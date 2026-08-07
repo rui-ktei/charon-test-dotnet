@@ -71,4 +71,6 @@ public static class Money
     public static decimal Rounding(decimal amount, decimal rate) => Round(amount * rate / 100m);
 
     public static decimal Loading(decimal amount, decimal rate) => Round(amount * rate / 100m);
+
+    public static decimal Weighting(decimal amount, decimal rate) => Round(amount * rate / 100m);
 }
