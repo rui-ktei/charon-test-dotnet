@@ -10,6 +10,8 @@ public static class Money
 
     public static decimal Cashback(decimal amount, decimal rate) => Round(amount * rate / 100m);
 
+    public static decimal Levy(decimal amount, decimal rate) => Round(amount * rate / 100m);
+
     public static decimal Clamp(decimal amount, decimal ceiling) => Math.Min(amount, ceiling);
 
     public static decimal Share(decimal amount, int ways)
