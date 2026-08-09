@@ -97,4 +97,10 @@ public class MoneyTests
     {
         Assert.Equal(1.50m, Money.Handling(100m, 1.5m));
     }
+
+    [Fact]
+    public void ServicesAtTheGivenRate()
+    {
+        Assert.Equal(2.00m, Money.Servicing(100m, 2m));
+    }
 }
