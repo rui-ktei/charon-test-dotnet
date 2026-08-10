@@ -103,4 +103,10 @@ public class MoneyTests
     {
         Assert.Equal(2.00m, Money.Servicing(100m, 2m));
     }
+
+    [Fact]
+    public void PostsAtTheGivenRate()
+    {
+        Assert.Equal(4.00m, Money.Posting(100m, 4m));
+    }
 }
