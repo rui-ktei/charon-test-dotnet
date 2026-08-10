@@ -109,4 +109,10 @@ public class MoneyTests
     {
         Assert.Equal(3.00m, Money.Auditing(100m, 3m));
     }
+
+    [Fact]
+    public void PostsAtTheGivenRate()
+    {
+        Assert.Equal(4.00m, Money.Posting(100m, 4m));
+    }
 }

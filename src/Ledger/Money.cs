@@ -79,4 +79,6 @@ public static class Money
     public static decimal Servicing(decimal amount, decimal rate) => Round(amount * rate / 100m);
 
     public static decimal Auditing(decimal amount, decimal rate) => Round(amount * rate / 100m);
+
+    public static decimal Posting(decimal amount, decimal rate) => Round(amount * rate / 100m);
 }
