@@ -109,4 +109,7 @@ public class MoneyTests
     {
         Assert.Equal(4.00m, Money.Posting(100m, 4m));
     }
+
+    [Fact]
+    public void SettlesAChargeAtAGivenRate() => Assert.Equal(0.25m, Money.Settling(10m, 2.5m));
 }
