@@ -112,4 +112,7 @@ public class MoneyTests
 
     [Fact]
     public void SettlesAChargeAtAGivenRate() => Assert.Equal(0.25m, Money.Settling(10m, 2.5m));
+
+    [Fact]
+    public void ClearsAChargeAtAGivenRate() => Assert.Equal(0.35m, Money.Clearing(10m, 3.5m));
 }
